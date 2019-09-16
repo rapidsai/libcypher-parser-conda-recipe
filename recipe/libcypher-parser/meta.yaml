@@ -1,0 +1,37 @@
+{% set name = "libcypher-parser" %}
+{% set libcypherparser_version = "0.6.2" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ libcypherparser_version }}
+
+source:
+  #git_url: https://github.com/cleishm/libcypher_parser.git
+  #git_tag: v{{ libcypherparser_version }}
+  url: https://github.com/cleishm/libcypher-parser/releases/download/v0.6.2/libcypher-parser-0.6.2.tar.gz
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - make
+    #   cloning from git URL requires extra build deps:
+    #- git
+    #- autoconf
+    #- automake
+    #- libtool
+
+test:
+  commands:
+    - test -f $PREFIX/include/cypher-parser.h
+    - test -f $PREFIX/bin/cypher-lint
+    - test -f $PREFIX/lib/libcypher-parser.a
+    - test -f $PREFIX/lib/libcypher-parser.so
+
+about:
+  home: https://github.com/cleishm/libcypher-parser.git
+  license: Apache-2.0
+  license_file: LICENSE
+  doc_url: https://github.com/cleishm/libcypher-parser.git
+  dev_url: https://github.com/cleishm/libcypher-parser.git
