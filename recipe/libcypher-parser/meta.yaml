@@ -11,7 +11,7 @@ source:
   url: https://github.com/cleishm/libcypher-parser/releases/download/v0.6.2/libcypher-parser-0.6.2.tar.gz
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
