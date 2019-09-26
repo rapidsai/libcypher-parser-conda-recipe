@@ -22,5 +22,5 @@ if [ -f ./autogen.sh ]; then
     ./autogen.sh
 fi
 export LEG=${PEG_DIR}/usr/local/bin/leg
-./configure --prefix=${PREFIX}
+./configure --with-pic --prefix=${PREFIX}
 make install
