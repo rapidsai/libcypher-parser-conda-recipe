@@ -11,10 +11,11 @@ source:
   url: https://github.com/cleishm/libcypher-parser/releases/download/v0.6.2/libcypher-parser-0.6.2.tar.gz
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
+    - {{ compiler('cxx') }}
     - make
     #   cloning from git URL requires extra build deps:
     #- git
