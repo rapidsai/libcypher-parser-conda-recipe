@@ -15,6 +15,7 @@ build:
 
 requirements:
   build:
+    - {{ compiler('c') }} # [aarch64]
     - make
     #   cloning from git URL requires extra build deps:
     #- git
