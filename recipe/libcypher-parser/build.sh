@@ -14,6 +14,12 @@ mkdir -p ${PEG_PARENT_DIR}; cd ${PEG_PARENT_DIR}
 wget https://github.com/gpakosz/peg/archive/0.1.18.tar.gz
 tar zxf 0.1.18.tar.gz
 cd peg-0.1.18
+
+# Fix strip binary path to use conda binutils on arm64
+if [ "$(arch)" = "aarch64" ]; then
+  sed -i 's/strip/${STRIP}/g' Makefile
+fi
+
 make ROOT=${PEG_DIR} install
 
 # Build libcypher-parser
